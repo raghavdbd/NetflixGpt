@@ -1,10 +1,9 @@
 import React from 'react'
+import Body from './Components/Body'
 
 const App = () => {
   return (
-    <div>
-      <h1 className='bg-slate-100'>Netflixgpt</h1>
-    </div>
+  <Body />
   )
 }
 
