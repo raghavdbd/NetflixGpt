@@ -5,6 +5,7 @@ import {isValidate} from '../util/validate'
 import {auth} from '../util/firebase'
 import { getAuth,createUserWithEmailAndPassword } from "firebase/auth";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -17,6 +18,7 @@ const Login = () => {
   //  useRef is used for getting input details from email box and password box
   const email=useRef();
   const password=useRef();
+  const navigate=useNavigate();
 
   //  is validate function will check email and password are valid or not
   const  isvalidateform=()=>{
@@ -33,6 +35,7 @@ const Login = () => {
       // Signed up 
       const user = userCredential.user;
       console.log(user)
+      navigate("/browse")
       // ...
     })
     .catch((error) => {
@@ -50,6 +53,7 @@ signInWithEmailAndPassword(auth, email.current.value, password.current.value)
     // Signed in 
     const user = userCredential.user;
     console.log(user)
+    navigate("/browse")
 
     // ...
   })
@@ -73,7 +77,7 @@ signInWithEmailAndPassword(auth, email.current.value, password.current.value)
   return (
     <div>
       <Header />
-      <div className="absolute bg-no-repeat bg-center bg-cover">
+      <div className="absolute h-screen">
         <img src="https://assets.nflxext.com/ffe/siteui/vlv3/77d35039-751f-4c3e-9c8d-1240c1ca6188/cf244808-d722-428f-80a9-052acdf158ec/IN-en-20231106-popsignuptwoweeks-perspective_alpha_website_large.jpg" alt="background-img" />
       </div>
       {

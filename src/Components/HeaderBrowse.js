@@ -3,9 +3,17 @@ import { getAuth, signOut } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
- 
+  const navigate=useNavigate();
+  const handleSignout =()=>{
+    const auth = getAuth(); 
+     signOut(auth).then(() => {
+      navigate("/");
+   // Sign-out successful.
+         }).catch((error) => {
+  // An error happened.
+});
 
-  
+  }
   return (
     <div className="absolute w-screen  px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between">
         <img className="w-44"
@@ -13,12 +21,11 @@ const Header = () => {
       
       <div className="font-bold text-red-500">
       
-       
+       <button onClick={handleSignout}> Sign-out</button>
       </div>
     </div>
     
   )
 }
-
 
 export default Header

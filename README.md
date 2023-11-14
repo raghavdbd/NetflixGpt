@@ -7,6 +7,10 @@ use Ref
 deploy on firebase 
 authentication setup
 create Signup user Account
+Create redusxStore to adduser detils
+After Sign-in navigate to browse page
+implemented Signout
+
 
 Login Form
 
