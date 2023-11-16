@@ -18,7 +18,7 @@ const Login = () => {
   //  useRef is used for getting input details from email box and password box
   const email=useRef();
   const password=useRef();
-  const navigate=useNavigate();
+
 
   //  is validate function will check email and password are valid or not
   const  isvalidateform=()=>{
@@ -35,7 +35,7 @@ const Login = () => {
       // Signed up 
       const user = userCredential.user;
       console.log(user)
-      navigate("/browse")
+      
       // ...
     })
     .catch((error) => {
@@ -53,8 +53,7 @@ signInWithEmailAndPassword(auth, email.current.value, password.current.value)
     // Signed in 
     const user = userCredential.user;
     console.log(user)
-    navigate("/browse")
-
+    
     // ...
   })
   .catch((error) => {
