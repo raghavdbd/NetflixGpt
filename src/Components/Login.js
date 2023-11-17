@@ -22,11 +22,10 @@ const Login = () => {
 
   //  is validate function will check email and password are valid or not
   const  isvalidateform=()=>{
-    // console.log(email.current.value)
-    // console.log(password.current.value)
+   
  const message1=   isValidate(email.current.value,password.current.value);
  setmessage(message1)
- console.log(message1)
+
  if(message1) return ;
  if(!isSignform){
   const auth = getAuth();
@@ -34,7 +33,7 @@ const Login = () => {
     .then((userCredential) => {
       // Signed up 
       const user = userCredential.user;
-      console.log(user)
+      
       
       // ...
     })
@@ -52,7 +51,7 @@ signInWithEmailAndPassword(auth, email.current.value, password.current.value)
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-    console.log(user)
+   
     
     // ...
   })
